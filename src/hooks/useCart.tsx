@@ -52,7 +52,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       }
 
       product.amount = currentAmount + 1;
-      const updatedCart = [...cart, product];
+      const updatedCart = productExists ? [...cart] : [...cart, product];
       setCart(updatedCart);
 
       localStorage.setItem('@RocketShoes:cart', JSON.stringify(updatedCart));
