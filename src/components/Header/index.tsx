@@ -11,7 +11,8 @@ const Header = (): JSX.Element => {
   const [cartSize, setCartSize] = useState(0);
 
   useEffect(() => {
-    const set = new Set(cart);
+    const products = cart.map((product) => product.id);
+    const set = new Set(products);
     setCartSize(set.size);
   }, [cart]);
 
